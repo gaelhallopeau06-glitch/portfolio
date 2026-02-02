@@ -1,0 +1,1030 @@
+/* --- VARIABLES ET THÈME --- */
+:root {
+    --bg-color: #f8fafc;
+    --thales-blue: #1e3a8a;
+    --accent-blue: #2563eb;
+    --text-main: #1e293b;
+    --text-light: #ffffff;
+    --border: #e2e8f0;
+    --card-bg: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* --- NAVIGATION --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo { font-weight: bold; color: var(--accent-blue); font-size: 1.3rem; }
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav ul li a { text-decoration: none; color: var(--text-main); font-weight: 500; transition: 0.3s; }
+nav ul li a:hover { color: var(--accent-blue); }
+
+/* --- SECTIONS (GÉNÉRAL) --- */
+section {
+    padding: 80px 10% 60px 10%;
+    min-height: auto; /* Changé de 100vh pour éviter les trop grands espaces */
+}
+
+h3 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    display: block;
+    text-align: center;
+}
+
+h3::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: var(--accent-blue);
+    margin: 10px auto 0 auto;
+}
+
+/* --- ACCUEIL (HERO) --- */
+header#accueil {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    background: linear-gradient(135deg, #e2e8f0 0%, #f8fafc 100%);
+}
+
+.hero-content h1 { font-size: 3.5rem; color: #0f172a; }
+.hero-content h2 { font-size: 1.8rem; color: var(--accent-blue); margin-bottom: 20px; }
+.hero-content p { max-width: 600px; margin-bottom: 30px; font-size: 1.1rem; }
+
+.buttons .btn-primary {
+    padding: 12px 25px;
+    background: var(--accent-blue);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.buttons .btn-secondary {
+    padding: 12px 25px;
+    border: 1px solid var(--accent-blue);
+    color: var(--accent-blue);
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* --- COMPÉTENCES (COLONNES BLEUES) --- */
+.skills-columns-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.skill-column {
+    flex: 1;
+    min-width: 300px;
+    background: var(--thales-blue);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.skill-column:hover { transform: translateY(-5px); }
+
+.skill-column h4 {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+.column-items { display: flex; flex-direction: column; gap: 15px; }
+
+.icon-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+/* Correction automatique des icônes noires sur fond bleu */
+.icon-item img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Rend les icônes blanches */
+}
+
+/* On garde les logos "color" (comme Python/C++) tels quels */
+.icon-item img[src*="color"], .icon-item img[src*="fluency"] {
+    filter: none;
+}
+
+.icon-item span { color: var(--text-light); font-weight: 500; }
+
+/* --- PARCOURS STYLE  --- */
+#parcours { padding-top: 40px; }
+
+.timeline-centered {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.timeline-centered::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 3px; height: 100%;
+    background: var(--border);
+    background: #2563eb;
+}
+
+.timeline-item-modern {
+    position: relative;
+    margin-bottom: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeline-img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 180px;
+    background: white;
+    border: 5px solid var(--accent-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.timeline-img img { width: 120px; height: 120px; object-fit: contain; }
+
+.timeline-content {
+    width: 38%;
+    background: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.timeline-item-modern:nth-child(even) .timeline-content {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: right;
+}
+
+.timeline-item-modern:nth-child(odd) .timeline-content {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* --- SLIDER PROJETS (STYLE SPLIT) --- */
+.slider-wrapper {
+    position: relative;
+    max-width: 900px; /* Largeur globale du bloc */
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden; /* Pour que l'image ne dépasse pas des coins arrondis */
+    border: 1px solid var(--border);
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+}
+
+/* Configuration de la slide */
+.slide {
+    display: none; /* Caché par défaut */
+    width: 100%;
+    animation: fadeEffect 0.5s; /* Petit effet d'apparition */
+}
+
+/* Quand la slide est active, on utilise Flexbox pour mettre côte à côte */
+.slide.active {
+    display: block; 
+}
+
+.project-split {
+    display: flex; /* C'est ici que la magie opère : image à gauche, texte à droite */
+    height: 400px; /* Hauteur fixe pour un rendu rectangulaire propre */
+}
+
+/* Partie Gauche : Image */
+.project-img {
+    flex: 1; /* Prend 50% de l'espace */
+    width: 50%;
+    background-color: #eee; /* Gris en attendant l'image */
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'image remplit tout le cadre sans être déformée */
+    display: block;
+}
+
+/* Partie Droite : Texte */
+.project-text {
+    flex: 1; /* Prend les autres 50% */
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    text-align: center;
+}
+
+.project-text h4 {
+    color: var(--thales-blue);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.project-text p {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.tech-stack {
+    font-weight: bold;
+    color: var(--accent-blue) !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* BOUTONS FLÈCHES (Style épuré comme le dessin) */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent; /* Fond transparent */
+    color: var(--text-main); /* Flèche sombre */
+    border: none;
+    font-size: 40px; /* Flèche plus grande et fine */
+    cursor: pointer;
+    z-index: 10;
+    padding: 0 20px;
+    transition: 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    color: var(--accent-blue);
+    transform: translateY(-50%) scale(1.2);
+}
+
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+/* Animation de transition simple */
+@keyframes fadeEffect {
+    from {opacity: .8} 
+    to {opacity: 1}
+}
+
+/* RESPONSIVE : Sur mobile, on empile tout */
+@media (max-width: 768px) {
+    .project-split {
+        flex-direction: column; /* Image en haut, texte en bas */
+        height: auto;
+    }
+    .project-img, .project-text {
+        width: 100%;
+    }
+    .project-img {
+        height: 250px;
+    }
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-top: 1px solid var(--border);
+}
+
+#parcours {
+    padding-top: 100px; /* Ajuste cette valeur pour l'espace entre Compétences et Parcours */
+    clear: both;       /* Sécurité pour éviter les chevauchements */
+}
+
+#parcours h3 {
+    display: block;
+    text-align: center;
+    margin-bottom: 50px; /* Espace entre le titre et le premier rond de la timeline */
+}
+/* --- MODIFICATION DU FOND DU PARCOURS --- */
+
+#parcours {
+    background-color: #dfeefd; /* Bleu très pâle (Goutte d'eau) */
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* On s'assure que les cartes de texte restent blanches pour bien ressortir */
+.timeline-content {
+    background-color: #ffffff; /* Fond blanc pur pour le contraste */
+    border: 1px solid #d1e2f3; /* Bordure légèrement bleutée pour l'harmonie */
+}
+
+/* On s'assure que les ronds des images restent blancs */
+.timeline-img {
+    background-color: #ffffff;
+}
+
+/* --- ANIMATIONS AU SURVOL (PARCOURS) --- */
+
+/* 1. Effet sur le bloc de texte (Carte blanche) */
+.timeline-content {
+    /* Rend l'animation fluide sur 0.3 secondes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    /* Zoom léger (1.05x) */
+    transform: scale(1.05); 
+    /* L'ombre devient plus grande pour donner un effet de "levée" */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    /* Optionnel : change légèrement la bordure */
+    border-color: var(--accent-blue);
+}
+
+/* 2. Effet sur le grand cercle (Icône centrale) */
+.timeline-img {
+    /* Rend l'animation fluide */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-img:hover {
+    /* IMPORTANT : on garde le translateX(-50%) pour qu'il reste centré, 
+       et on ajoute scale(1.1) pour le grossir de 10% */
+    transform: translateX(-50%) scale(1.1);
+    
+    /* Ombre portée bleutée (effet "Glow") */
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.4);
+    
+    /* La bordure devient un peu plus foncée */
+    border-color: var(--thales-blue);
+    
+    /* Change le curseur pour montrer que c'est interactif */
+    cursor: pointer;
+}
+
+/* --- NAVIGATION POINTS (DOTS) --- */
+.dots-container {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espace entre les points */
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: #bbb; /* Gris par défaut */
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: #000; /* Noir quand actif ou survolé */
+}
+
+/* --- EFFET SURVOL IMAGE PROJET --- */
+.project-img {
+    position: relative; /* Indispensable pour que le bouton se place par dessus */
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Le calque invisible qui couvre l'image */
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Caché par défaut */
+    transition: opacity 0.3s ease;
+}
+
+/* Le rond noir (faible opacité) */
+.plus-circle {
+    width: 350px;
+    height: 350px;
+    background-color: rgba(0, 0, 0, 0.3); /* Noir transparent */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000; /* Le Plus est noir opaque */
+    font-size: 40px;
+    font-weight: bold;
+    user-select: none;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+/* Quand on passe la souris sur l'image */
+.project-img:hover .img-overlay {
+    opacity: 1; /* On affiche le calque */
+}
+
+.project-img:hover .plus-circle {
+    transform: scale(1); /* Petit effet de zoom du bouton */
+}
+
+/* --- FENÊTRE MODALE (POPUP) --- */
+.modal-overlay {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond sombre derrière la fenêtre */
+    z-index: 1000; /* Passe au dessus de tout */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    width: 85%; /* Prend une très grande partie de la largeur */
+    height: 85%; /* Prend une très grande partie de la hauteur */
+    padding: 40px;
+    border-radius: 10px;
+    position: relative;
+    overflow-y: auto; /* Permet de scroller si le texte est trop long */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: left;
+}
+
+.modal-content h2 {
+    color: var(--thales-blue);
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* La croix pour fermer */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    color: red;
+}
+
+/* --- SECTION CONTACT REVISITÉE --- */
+#contact {
+    text-align: center; /* Centre le titre et le texte */
+    padding-bottom: 80px;
+}
+
+.contact-buttons-wrapper {
+    display: flex;
+    justify-content: center; /* Centre les boutons horizontalement */
+    gap: 20px;               /* Espace entre les boutons */
+    margin-top: 40px;
+    flex-wrap: wrap;         /* Permet de passer à la ligne sur mobile */
+}
+
+.btn-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Taille identique pour les trois */
+    width: 200px; 
+    padding: 15px 25px;
+    
+    border: 2px solid var(--accent-blue);
+    border-radius: 8px;
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.btn-contact:hover {
+    background-color: var(--accent-blue);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+}
+
+.location {
+    margin-top: 30px;
+    color: #64748b;
+    font-style: italic;
+}
+
+/* Ajustement pour mobile */
+@media (max-width: 600px) {
+    .btn-contact {
+        width: 80%; /* Les boutons prennent plus de place sur petit écran */
+    }
+}
+
+/* --- NOUVEAU STYLE ACCUEIL SOMBRE --- */
+.hero-dark {
+    background-color: #374b5c; /* Couleur ardoise comme sur l'image */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(126, 117, 255);
+    position: relative;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+}
+
+.hero-text h2 {
+    font-size: 1.5rem;
+    color: #000000;
+    font-weight: 300;
+}
+
+/* Flèche de défilement */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-down span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 3px solid rgb(0, 0, 0);
+    border-right: 3px solid rgb(0, 0, 0);
+    transform: rotate(45deg);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0) rotate(45deg);}
+    40% {transform: translateY(-10px) rotate(45deg);}
+    60% {transform: translateY(-5px) rotate(45deg);}
+}
+
+/* --- SECTION PRÉSENTATION --- */
+#presentation {
+    background-color: #f1f5f9;
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.pres-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 50px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pres-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid #81a2e9;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.pres-content {
+    flex: 1;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+.pres-links {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    justify-content: flex-start;
+}
+
+.icon-link {
+    text-decoration: none;
+    color: #334155;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.icon-link img {
+    width: 40px;
+    margin-bottom: 10px;
+}
+
+.icon-link:hover {
+    color: var(--accent-blue);
+    transform: translateY(-5px);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .hero-container, .pres-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .pres-content { text-align: center; }
+    .pres-links { justify-content: center; }
+}
+
+/* --- ACCUEIL INGÉNIEUR SOMBRE --- */
+.hero-engineering {
+    height: 100vh;
+    background-color: #374b5c; /* Gris-Bleu Ardoise comme l'image 1 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(99, 154, 255);
+    position: relative;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.geometric-shape {
+    width: 120px;
+    height: 120px;
+    border: 3px solid rgb(0, 60, 255);
+    transform: rotate(45deg); /* Crée le losange de l'image 1 */
+    position: relative;
+}
+
+.geometric-shape::after {
+    content: "";
+    position: absolute;
+    top: 50%; left: -10%;
+    width: 120%; height: 3px;
+    background: rgb(0, 0, 0);
+    transform: rotate(-45deg);
+}
+
+.hero-text h1 { font-size: 3.5rem; letter-spacing: 2px; margin: 0; }
+.hero-text h2 { font-size: 1.5rem; color: #000000; font-weight: 300; }
+
+/* --- SECTION PRÉSENTATION --- */
+#presentation {
+    background-color: #f8fafc;
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.section-title-line::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #374b5c;
+    margin: 10px auto;
+}
+
+.pres-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 40px auto 0;
+}
+
+.pres-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.pres-content { flex: 1; text-align: left; }
+.salut { font-size: 1.5rem; margin-bottom: 10px; }
+
+/* Alignement des 3 icônes sur une ligne */
+.pres-links {
+    display: flex;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.icon-link {
+    text-decoration: none;
+    color: #455a64;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.icon-link img { width: 35px; margin-bottom: 5px; }
+.icon-link:hover { transform: translateY(-5px); color: #2563eb; }
+
+/* Flèche de défilement */
+.scroll-down span {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    border-bottom: 3px solid rgb(0, 0, 255);
+    border-right: 3px solid rgb(0, 0, 255);
+    transform: translateX(-50%) rotate(45deg);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0) rotate(45deg);}
+    40% {transform: translateX(-50%) translateY(-10px) rotate(45deg);}
+}
+
+/* --- SECTION CONTACT BULLES --- */
+#contact {
+    background-color: white; /* Fond blanc pour bien faire ressortir les cercles */
+    padding-bottom: 80px;
+}
+
+.contact-bubbles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px; /* Espace large entre les cercles */
+    flex-wrap: wrap; /* Permet de passer à la ligne sur petit écran */
+}
+
+.bubble-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    group: pointer; /* Groupe pour l'animation */
+}
+
+/* Le Cercle lui-même */
+.bubble-circle {
+    width: 200px;  /* Largeur du cercle */
+    height: 200px; /* Hauteur du cercle */
+    border-radius: 50%; /* Rend l'élément parfaitement rond */
+    border: 3px solid #2563eb; /* Bordure bleue comme ton thème */
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease; /* Fluidité de l'animation */
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1);
+    margin-bottom: 15px;
+}
+
+.bubble-circle img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+/* Le texte sous le cercle */
+.bubble-item span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #374b5c;
+    transition: color 0.3s ease;
+}
+
+/* --- ANIMATION AU SURVOL --- */
+.bubble-item:hover .bubble-circle {
+    transform: translateY(-10px) scale(1.05); /* Le cercle monte et grossit un peu */
+    background-color: #2563eb; /* Le fond devient bleu */
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4); /* L'ombre s'accentue */
+}
+
+/* Changement de couleur de l'icône et du texte au survol */
+.bubble-item:hover .bubble-circle img {
+    filter: brightness(0) invert(1); /* L'icône devient blanche */
+    transform: scale(1.1);
+}
+
+.bubble-item:hover span {
+    color: #2563eb; /* Le texte devient bleu */
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .contact-bubbles {
+        gap: 40px;
+        flex-direction: column;
+    }
+}
+
+/* --- MODALE GALERIE STYLE --- */
+
+/* Agrandir un peu la modale pour accueillir la galerie */
+.modal-content.modal-gallery-layout {
+    width: 90%;
+    max-width: 1500px; /* Limite la largeur sur grand écran */
+    max-height: 90vh; /* Évite que la modale dépasse de l'écran en hauteur */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Conteneur Flex pour la disposition Gauche/Droite */
+.modal-body-flex {
+    display: flex;
+    gap: 30px; /* Espace entre les images et le texte */
+    margin-top: 20px;
+    flex: 1; /* Occupe l'espace restant */
+    min-height: 0; /* Important pour que le scroll fonctionne dans le flex item */
+}
+
+/* --- COLONNE GAUCHE (IMAGES) --- */
+.modal-left-col {
+    flex: 1; /* Prend 2/3 de la largeur */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Conteneur de l'image principale */
+.main-image-container {
+    background-color: #f0f2f5;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 400px; /* Hauteur fixe pour l'image principale */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e2e8f0;
+}
+
+#modalMainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* L'image entière est visible sans être coupée */
+}
+
+/* Barre de miniatures */
+.thumbnails-scroll-container {
+    overflow-x: auto; /* Active le scroll horizontal */
+    padding-bottom: 10px; /* Espace pour la scrollbar */
+    /* Style de la scrollbar (optionnel, pour Chrome/Safari) */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-blue) #e2e8f0;
+}
+
+.thumbnails-track {
+    display: flex;
+    gap: 10px;
+}
+
+/* Style des miniatures */
+.thumb-img {
+    height: 70px; /* Hauteur fixe des miniatures */
+    width: auto;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.thumb-img:hover {
+    opacity: 1;
+}
+
+/* Classe ajoutée par JS à la miniature active */
+.thumb-img.active {
+    opacity: 1;
+    border-color: var(--accent-blue); /* Bordure bleue sur l'image sélectionnée */
+    transform: scale(1.05);
+}
+
+/* --- COLONNE DROITE (TEXTE) --- */
+.modal-right-col {
+    flex: 1; /* Prend 1/3 de la largeur */
+    overflow-y: auto; /* Permet de scroller si le texte est très long */
+    padding-right: 10px;
+}
+
+.desc-title {
+    color: var(--thales-blue);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.desc-text {
+    font-size: 1rem;
+    color: #475569;
+    line-height: 1.7;
+    white-space: pre-line; /* Permet de respecter les sauts de ligne dans le texte */
+}
+
+/* RESPONSIVE MOBILE : On empile tout */
+@media (max-width: 850px) {
+    .modal-body-flex {
+        flex-direction: column;
+    }
+    .modal-left-col, .modal-right-col {
+        flex: auto;
+    }
+    .main-image-container {
+        height: 250px; /* Image moins haute sur mobile */
+    }
+    .modal-content.modal-gallery-layout {
+        max-height: 95vh; /* Utilise plus de hauteur sur mobile */
+        padding: 20px;
+    }
+}
