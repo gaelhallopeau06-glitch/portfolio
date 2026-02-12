@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Gaël HALLOPEAU</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -37,22 +38,22 @@
     <h3 class="section-title-line">PRÉSENTATION</h3>
     <div class="pres-container">
         <div class="pres-image">
-            <img src="foshu.jpg" alt="Gaël Hallopeau">
+            <img src="tete.PNG" alt="Gaël Hallopeau">
         </div>
         <div class="pres-content">
             <p class="salut"></p>
-            <p>Je m'appelle <strong>Gaël</strong> et je suis étudiant ingénieur à l'<strong>ISEN</strong>. Passionné par l'électronique et les systèmes embarqués, j'aspire à travailler sur des projets innovants mêlant hardware et software. Actuellement en recherche d'alternance pour 2026-2029, je souhaite mettre mes compétences au service de solutions techniques concrètes.</p>
+            <p>Je m'appelle <strong>Gaël</strong> et je suis étudiant en <strong>bts électronique</strong> option prépa ingénieur à l'<strong>ISEN</strong>. Je m’intéresse particulièrement à l’électronique et aux systèmes embarqués, avec une vraie attirance pour les projets qui combinent conception matérielle et développement logiciel. j'aspire à travailler sur des projets innovants mêlant hardware et software. Actuellement en recherche <strong>d'alternance ingénieur</strong> pour 2026-2029, je souhaite mettre mes compétences au service de solutions techniques concrètes.</p>
             
             <div class="pres-links">
                 <a href="cv_gael.pdf" class="icon-link" target="_blank" download="CV_Gael_Hallopeau.pdf">
                     <img src="https://img.icons8.com/ios/50/455a64/document.png" alt="CV">
                     <span>Mon CV</span>
                 </a>
-                <a href="https://linkedin.com/in/ton-profil" target="_blank" class="icon-link">
+                <a href="https://www.linkedin.com/in/gaël-hallopeau-405b31346" target="_blank" class="icon-link">
                     <img src="https://img.icons8.com/ios/50/455a64/linkedin.png" alt="LinkedIn">
                     <span>LinkedIn</span>
                 </a>
-                <a href="https://github.com/ton-profil" target="_blank" class="icon-link">
+                <a href="https://github.com/gaelhallopeau06-glitch" target="_blank" class="icon-link">
                     <img src="https://img.icons8.com/ios/50/455a64/github.png" alt="GitHub">
                     <span>GitHub</span>
                 </a>
@@ -219,7 +220,8 @@
                         <div class="img-overlay" onclick="openModal(
                             'Système de sécurité (2025)', 
                             '<strong>Contexte :</strong> Travaux Pratiques de première année de BTS (TP Contrôle d\'accès).<br><br><strong>Résumé du projet :</strong><br>Développement complet d\'un <strong>système de contrôle d\'accès autonome</strong> (Digicode). Le projet s\'est déroulé en deux phases majeures :<br>1. <strong>Jumeau Numérique :</strong> Simulation totale du système sur <strong>Proteus</strong> (Arduino Uno, Clavier matriciel 4x3, Écran LCD I2C, Relais) pour valider le code C++ (gestion du mot de passe, sécurisation des saisies).<br>2. <strong>Réalisation Physique :</strong> Fabrication de la carte électronique, <strong>brasage des composants CMS</strong> (microscope), débogage hardware (correction de pistes, wrapping) et validation finale du prototype fonctionnel.',
-                            ['digicode/routage.PNG', 'digicode/carte.PNG', 'digicode/clavier.PNG','digicode/schema.PNG','digicode/carteirltop.PNG','digicode/carteirlbot.PNG','digicode/code.PNG']
+                            ['digicode/routage.PNG', 'digicode/carte.PNG', 'digicode/clavier.PNG','digicode/schema.PNG','digicode/carteirltop.PNG','digicode/carteirlbot.PNG','digicode/code.PNG'],
+                            { 'report': 'controle_acces.pdf' }
                         )">
                             <div class="plus-circle">+</div>
                         </div>
@@ -239,7 +241,8 @@
                         <div class="img-overlay" onclick="openModal(
                             'Jeu de combats Pokémon (2024)', 
                             '<strong>Contexte :</strong> Projet de fin d\'année en spécialité NSI (Numérique et Sciences Informatiques).<br><br><strong>Résumé du projet :</strong><br>Création d\'un jeu vidéo fonctionnel reproduisant les combats de Pokémon (1v1) en tour par tour.<br>• <strong>Programmation :</strong> Utilisation du langage <strong>Python</strong> et de la bibliothèque <strong>Pygame</strong> pour gérer l\'interface graphique et la boucle de jeu.<br>• <strong>Données :</strong> Conception et gestion d\'une <strong>base de données SQL</strong> complexe contenant les statistiques, les types et les attaques des 151 premiers Pokémon.<br>• <strong>Graphisme :</strong> Création des assets graphiques et de l\'ergonomie des menus via le logiciel Krita.',
-                            ['pokemon.png', 'pokemonimg/start.PNG', 'pokemonimg/bdd.PNG', 'pokemonimg/arenecombat.png']
+                            ['pokemon.png', 'pokemonimg/start.PNG', 'pokemonimg/bdd.PNG', 'pokemonimg/arenecombat.png'],
+                            { 'report': 'projet_nsi.pdf' }
                         )">
                             <div class="plus-circle">+</div>
                         </div>
@@ -258,16 +261,16 @@
                         <img src="https://www.francebleu.fr/s3/cruiser-production/2021/05/93920d1f-27e2-4ec7-9d9e-daf4e973aa17/600_capture_decran_2021-05-19_a_08.02.38.jpg" alt="App Météo">
                         <div class="img-overlay" onclick="openModal(
                             'Application Météo (2025)', 
-                            'Développement d\'une application connectée à une API (OpenWeatherMap) pour afficher les prévisions en temps réel.',
-                            ['pokemon.png', 'pokemonimg/start.png', 'pokemonimg/bdd.png', 'pokemonimg/arenecombat.png']
+                            '<strong>Contexte :</strong> Projet personnel de développement logiciel visant à faciliter la planification de sorties en plein air (marche, vélo) par l\'analyse locale des conditions climatiques.<br><br><strong>Résumé du projet :</strong><br>Développement d\'un script Python capable de générer une <strong>carte météorologique interactive</strong> centrée sur une ville et un rayon d\'action définis par l\'utilisateur.<br>• <strong>Collecte de données :</strong> Utilisation de l\'API <strong>OpenWeatherMap</strong> pour les données en temps réel et de l\'API <strong>Overpass (OpenStreetMap)</strong> pour identifier les communes environnantes.<br>• <strong>Visualisation Dynamique :</strong> Utilisation de <strong>Folium</strong> pour générer une carte HTML avec des marqueurs personnalisés (icônes rotatives selon la direction du vent).<br>• <strong>Objectif :</strong> Ce script constitue la base d\'une future application dédiée à la sécurisation des itinéraires de randonnée.',
+                            ['meteo/zoomvitre.PNG', 'meteo/map.PNG', 'meteo/console.PNG', 'meteo/fonctionapi.PNG'],
                         )">
                             <div class="plus-circle">+</div>
                         </div>
                     </div>
                     <div class="project-text">
-                        <h4>Application météo (2025-2026)</h4>
-                        <p>Création d'une application météo en Python utilisant une API pour récupérer les données.</p>
-                        <p class="tech-stack">Technos : Python, API</p>
+                        <h4>Application Météo (2025)</h4>
+                        <p>Génération de cartes interactives via API pour la planification d'itinéraires.</p>
+                        <p class="tech-stack">Technos : Python, Folium, API REST</p>
                     </div>
                 </div>
             </div>
@@ -279,7 +282,8 @@
                         <div class="img-overlay" onclick="openModal(
                             'Cartographie des controverses (2025)', 
                             '<strong>Contexte :</strong> Projet de communication et développement web sur le thème &quot;La place du drone dans notre société&quot;.<br><br><strong>Résumé du projet :</strong><br>Conception et développement d\'un <strong>site web responsive</strong> visant à analyser les impacts sociologiques, économiques, écologiques et juridiques des drones civils et militaires.<br>• <strong>Développement :</strong> Codage de la structure en <strong>HTML5</strong> et mise en forme via <strong>CSS3</strong> (utilisation du framework Bootstrap) pour une navigation fluide.<br>• <strong>Contenu :</strong> Rédaction d\'articles de fond, intégration de frises chronologiques interactives et réalisation d\'un micro-trottoir audio.',
-                            ['drone.png', 'cartographie/bienvenue.PNG', 'cartographie/definition.PNG', 'cartographie/redaction.PNG','cartographie/head.PNG']
+                            ['drone.png', 'cartographie/bienvenue.PNG', 'cartographie/definition.PNG', 'cartographie/redaction.PNG','cartographie/head.PNG'],
+                            { 'site': 'https://gaelhallopeau06-glitch.github.io/drones/' }
                         )">
                             <div class="plus-circle">+</div>
                         </div>
@@ -290,16 +294,17 @@
                         <p class="tech-stack">Technos : HTML, CSS, JS</p>
                     </div>
                 </div>
-            </div> 
-            
+            </div>
+
             <div class="slide">
                 <div class="project-split">
                     <div class="project-img">
                         <img src="montstmichel/arrive.jpg" alt="Sortie vélo">
                         <div class="img-overlay" onclick="openModal(
                             'Mont-Saint-Michel à vélo (2025)', 
-                            'Analyse de performance sportive et tracé GPS lors d\'un périple vélo.',
-                            ['montstmichel/arrive.jpg', 'montstmichel/strava.jpg', 'montstmichel/route.jpg', 'montstmichel/stats.PNG', 'montstmichel/jardin.png']
+                            '<strong>Contexte :</strong> Défi sportif personnel réalisé après plusieurs mois de préparation intensive, empruntant les voies vertes pour rallier le Mont-Saint-Michel.<br><br><strong>Résumé du projet :</strong><br>Ce périple représente l\'aboutissement d\'un entraînement rigoureux, mettant à l\'épreuve l\'endurance physique et la force mentale sur une longue distance.<br>• <strong>Performance :</strong> Maintien d\'une vitesse moyenne de 22 km/h sur l\'ensemble du parcours, incluant une gestion stratégique de l\'effort et des ravitaillements.<br>• <strong>Expérience Humaine :</strong> Une aventure jalonnée de rencontres spontanées et authentiques le long du chemin.<br>• <strong>Analyse technique :</strong> Exploitation des données GPS et biométriques pour analyser l\'effort et valider la progression par rapport aux objectifs fixés.',
+                            ['montstmichel/arrive.jpg', 'montstmichel/strava.jpg', 'montstmichel/route.jpg', 'montstmichel/stats.PNG', 'montstmichel/jardin.png'],
+                            { 'strava': 'https://www.strava.com/activities/15320988948' }
                         )">
                             <div class="plus-circle">+</div>
                         </div>
@@ -346,11 +351,11 @@
             <span>Mon CV</span>
         </a>
 
-        <a href="tel:+33646266590" class="bubble-item">
+        <a href="https://www.linkedin.com/in/gaël-hallopeau-405b31346" class="bubble-item">
             <div class="bubble-circle">
-                <img src="https://img.icons8.com/ios/50/2563eb/phone.png" alt="Téléphone">
+                <img src="https://img.icons8.com/ios/50/455a64/linkedin.png" alt="LinkedIn">
             </div>
-            <span>Téléphone</span>
+            <span>LinkedIn</span>
         </a>
 
     </div>
@@ -377,115 +382,128 @@
                 
                 <div class="thumbnails-scroll-container">
                     <div class="thumbnails-track" id="thumbnailsTrack">
-                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="modal-right-col">
                 <h4 class="desc-title">Détails du projet</h4>
                 <div id="modalDescription" class="desc-text"></div>
+                
+                <div id="modal-buttons" class="modal-btn-container"></div>
             </div>
         </div>
     </div>
 </div>
 
     <script>
-    // --- Variables globales ---
+    // --- VARIABLES GLOBALES ---
     let currentSlide = 0;
+    let slideInterval;
+
+    // Sélection des éléments (avec sécurité si l'élément n'existe pas)
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
-    let slideInterval;
     const modal = document.getElementById('projectModal');
-    // Variables pour la nouvelle modale galerie
     const modalTitle = document.getElementById('modalTitle');
     const modalDesc = document.getElementById('modalDescription');
     const modalMainImage = document.getElementById('modalMainImage');
     const thumbnailsTrack = document.getElementById('thumbnailsTrack');
+    const modalBtnContainer = document.getElementById('modal-buttons');
 
-    // --- FONCTIONS SLIDER (inchangées) ---
-    function showSlide(index) {
+    // --- FONCTION SLIDER ---
+    // Elle doit être déclarée AVANT d'être appelée
+    window.showSlide = function(index) {
+        if (!slides.length) return;
         slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
+        if (dots.length) dots.forEach(dot => dot.classList.remove('active'));
+
         if (index >= slides.length) currentSlide = 0;
         else if (index < 0) currentSlide = slides.length - 1;
         else currentSlide = index;
+
         slides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
+        if (dots.length) dots[currentSlide].classList.add('active');
+    };
+
+    window.moveSlide = function(step) {
+        showSlide(currentSlide + step);
+        resetTimer();
+    };
+
+    window.goToSlide = function(index) {
+        showSlide(index);
+        resetTimer();
+    };
+
+    function startTimer() {
+        slideInterval = setInterval(() => { moveSlide(1); }, 5000);
     }
-    function moveSlide(step) { showSlide(currentSlide + step); resetTimer(); }
-    function goToSlide(index) { showSlide(index); resetTimer(); }
-    function startTimer() { slideInterval = setInterval(() => { moveSlide(1); }, 5000); }
-    function resetTimer() { clearInterval(slideInterval); startTimer(); }
 
-    // --- NOUVELLES FONCTIONS MODALE GALERIE ---
-
-    /**
-     * Ouvre la modale avec une galerie d'images.
-     * @param {string} title - Le titre du projet.
-     * @param {string} description - Le texte explicatif (supporte le HTML).
-     * @param {Array<string>} imagesList - Un tableau contenant les URLs de toutes les images du projet.
-     * La première image du tableau sera l'image principale par défaut.
-     */
-    function openModal(title, description, imagesList) {
-        // 1. Remplir le titre et la description
-        modalTitle.innerText = title;
-        modalDesc.innerHTML = description;
-
-        // 2. Initialiser l'image principale avec la première image de la liste
-        if (imagesList && imagesList.length > 0) {
-            modalMainImage.src = imagesList[0];
-        } else {
-            modalMainImage.src = ""; // Fallback si pas d'images
-        }
-
-        // 3. Générer les miniatures
-        thumbnailsTrack.innerHTML = ''; // On vide les anciennes miniatures
-        
-        if (imagesList && imagesList.length > 0) {
-            imagesList.forEach((imgSrc, index) => {
-                // Créer l'élément image miniature
-                const thumb = document.createElement('img');
-                thumb.src = imgSrc;
-                thumb.classList.add('thumb-img');
-                if (index === 0) thumb.classList.add('active'); // La première est active par défaut
-
-                // Ajouter l'événement clic pour changer l'image principale
-                thumb.onclick = function() {
-                    // Changer l'image principale
-                    modalMainImage.src = this.src;
-                    
-                    // Gérer la classe 'active' sur les miniatures
-                    document.querySelectorAll('.thumb-img').forEach(t => t.classList.remove('active'));
-                    this.classList.add('active');
-                };
-
-                // Ajouter la miniature dans la barre de défilement
-                thumbnailsTrack.appendChild(thumb);
-            });
-        }
-
-        // 4. Afficher la modale et arrêter le slider
-        modal.style.display = 'flex';
+    function resetTimer() {
         clearInterval(slideInterval);
+        startTimer();
     }
 
-    function closeModal() {
-        modal.style.display = 'none';
-        startTimer(); // Relance le défilement du slider principal
-    }
+    // --- FONCTION MODALE ---
+    // Utilisation de window.openModal pour garantir qu'elle est accessible partout
+    window.openModal = function(title, description, imagesList, links) {
+        const projectLinks = links || {};
+        
+        if (modalTitle) modalTitle.innerHTML = title;
+        if (modalDesc) modalDesc.innerHTML = description;
 
-    // Fermer en cliquant en dehors
+        // Image principale
+        if (modalMainImage && imagesList && imagesList.length > 0) {
+            modalMainImage.src = imagesList[0];
+        }
+
+        // Miniatures
+        if (thumbnailsTrack) {
+            thumbnailsTrack.innerHTML = '';
+            if (imagesList && imagesList.length > 0) {
+                imagesList.forEach((imgSrc, index) => {
+                    const thumb = document.createElement('img');
+                    thumb.src = imgSrc;
+                    thumb.className = 'thumb-img' + (index === 0 ? ' active' : '');
+                    thumb.onclick = function() {
+                        modalMainImage.src = this.src;
+                        document.querySelectorAll('.thumb-img').forEach(t => t.classList.remove('active'));
+                        this.classList.add('active');
+                    };
+                    thumbnailsTrack.appendChild(thumb);
+                });
+            }
+        }
+
+        // Boutons
+        if (modalBtnContainer) {
+            modalBtnContainer.innerHTML = "";
+            if (projectLinks.report) {
+                modalBtnContainer.innerHTML += `<a href="${projectLinks.report}" target="_blank" class="project-btn btn-rapport"><i class="fas fa-file-pdf"></i> Rapport</a>`;
+            }
+            if (projectLinks.site) {
+                modalBtnContainer.innerHTML += `<a href="${projectLinks.site}" target="_blank" class="project-btn btn-site"><i class="fas fa-globe"></i> Voir le site</a>`;
+            }
+            if (projectLinks.strava) {
+                modalBtnContainer.innerHTML += `<a href="${projectLinks.strava}" target="_blank" class="project-btn btn-strava"><i class="fab fa-strava"></i> Strava</a>`;
+            }
+        }
+
+        if (modal) modal.style.display = 'flex';
+        clearInterval(slideInterval);
+    };
+
+    window.closeModal = function() {
+        if (modal) modal.style.display = 'none';
+        startTimer();
+    };
+
+    // Fermer au clic extérieur
     window.onclick = function(event) {
         if (event.target == modal) closeModal();
-    }
+    };
 
-    // Démarrage initial
+    // Démarrage
     startTimer();
-</script>
-</body>
-
-</html>
-
-
-
-
+                    </script>
