@@ -1,4 +1,4 @@
-/* --- VARIABLES ET THÈME --- */
+/* --- VARIABLES ET THÈME --- *//* --- VARIABLES ET THÈME --- */
 :root {
     --bg-color: #f8fafc;
     --thales-blue: #1e3a8a;
@@ -1134,3 +1134,43 @@ footer {
         height: 250px;
     }
 }
+
+
+/* Conteneur des boutons */
+.modal-btn-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Style général des boutons */
+.project-btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: transform 0.2s, opacity 0.2s;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+.project-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+    color: white;
+}
+
+.project-btn i {
+    margin-right: 8px; /* Espace entre icône et texte */
+}
+
+/* Couleurs spécifiques */
+.btn-rapport { background-color: #555; }       /* Gris */
+.btn-video { background-color: #d32f2f; }      /* Rouge YouTube */
+.btn-site { background-color: #1976d2; }       /* Bleu Web */
+.btn-strava { background-color: #fc4c02; }     /* Orange Strava */
